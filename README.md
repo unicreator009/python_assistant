@@ -52,6 +52,7 @@ It provides a hands-on introduction to **speech recognition**, **text-to-speech*
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/unicreator009/python_assistant
+git clone https://github.com/unicreator009/python_assistant.git
 
 cd python-assistant
+
