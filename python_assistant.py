@@ -5,12 +5,11 @@ import subprocess
 import pywhatkit
 import wikipedia
 
-engine = pyttsx3.init()
 
 def speak(text):
+    engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
-
 
 def listen():
     r = sr.Recognizer()
@@ -23,10 +22,9 @@ def listen():
             command = command.lower()
             print(f"you said: {command}")
             return command
-        except sr.UnknownValueError:
+        except:
             speak("sorry, i did not understand that")
-        except sr.RequestError:
-            speak("speech service is unavailable")
+            return ""
 
 
 def open_youtube():
@@ -44,9 +42,6 @@ def open_calculator():
 def open_notepad():
     subprocess.Popen("notepad.exe")
     speak("opening notepad.")
-def open_copilot():
-    subprocess.Popen("copilot.exe")
-    speak("opening copilot.")
 
 
 def open_google():
@@ -62,10 +57,6 @@ def answer_question(question):
         speak("sorry, i could not find an answer to that question. Opening google.")
 
         webbrowser.open(f"https://www.google.com/search?q={question}")
-
-
-
-
 
 def main():
     speak("hello i am your digital assistant. how can i help you?")
